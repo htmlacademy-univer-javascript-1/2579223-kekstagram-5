@@ -1,14 +1,24 @@
 const checkStrLen = (str, maxLen) => str.length <= maxLen;
 
 const isPalindrome = (str) => {
-  str = str.toUpperCase().replaceAll(" ", "");
-  const reversedStr = str.split("").reverse().join("");
-  return reversedStr === str;
+  const preparedStr = str.toUpperCase().replaceAll(" ", "");
+  // const convertedStr = preparedStr.split("").reverse().join("");
+  let convertedStr = "";
+  for (let i = preparedStr.length - 1; i >= 0; i -= 1) {
+    convertedStr += preparedStr.at(i);
+  }
+  return convertedStr === preparedStr;
 };
 
 const takeNumber = (str) => {
-  const numStr = str.replace(/[^0-9]/g, "");
-  return numStr.length > 0 ? parseInt(numStr, 10) : NaN;
+  let numStr = "";
+  const preparedStr = str.toString().replaceAll(" ", "");
+  for (let i = 0; i < preparedStr.length; i++) {
+    if (!isNaN(preparedStr.at(i))) {
+      numStr += preparedStr.at(i);
+    }
+  }
+  return parseInt(numStr, 10);
 };
 
 // Тесты
