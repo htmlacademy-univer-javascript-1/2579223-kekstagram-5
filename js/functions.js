@@ -1,6 +1,4 @@
-const checkStrLen = (str, maxLen) => {
-  return str.length <= maxLen;
-};
+const checkStrLen = (str, maxLen) => str.length <= maxLen;
 
 const isPalindrome = (str) => {
   let convertedStr = "";
