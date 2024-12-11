@@ -97,4 +97,11 @@ const createPostDescription = (_, index) => {
   };
 };
 
-export { createPostDescription, getRandomComment };
+const createPosts = () => {
+  const postsArr = Array.from({ length: 25 }, (_, i) =>
+    createPostDescription(null, i + 1)
+  );
+  return postsArr;
+};
+
+export { createPostDescription, createPosts, getRandomComment };
