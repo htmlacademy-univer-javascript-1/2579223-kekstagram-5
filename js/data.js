@@ -101,7 +101,6 @@ const createPosts = () => {
   const postsArr = Array.from({ length: 25 }, (_, i) =>
     createPostDescription(null, i + 1)
   );
-  console.log(postsArr);
   return postsArr;
 };
 

@@ -6,8 +6,7 @@ const pictureTemplate = document.querySelector("#picture").content;
 const posts = createPosts();
 const fragment = document.createDocumentFragment();
 
-posts.forEach((picture) => {
-  const { url, description, comments, likes } = picture;
+posts.forEach(({ url, description, comments, likes }) => {
   const pictureElement = pictureTemplate.cloneNode(true);
   const img = pictureElement.querySelector(".picture__img");
   img.src = url;
@@ -15,7 +14,7 @@ posts.forEach((picture) => {
   pictureElement.querySelector(".picture__likes").textContent = likes;
   pictureElement.querySelector(".picture__comments").textContent =
     comments.length;
-  picturesContainer.appendChild(pictureElement);
+  fragment.appendChild(pictureElement);
 });
 
 picturesContainer.appendChild(fragment);
