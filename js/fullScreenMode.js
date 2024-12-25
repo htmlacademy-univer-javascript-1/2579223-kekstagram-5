@@ -1,7 +1,7 @@
 import { posts } from "./rendering.js";
 
 const body = document.querySelector("body");
-
+// ююю
 const bigPictureModalElement = document.querySelector(".big-picture");
 const bigPictureCloseElement = document.querySelector(".big-picture__cancel");
 const bigPictureImg = document.querySelector(".big-picture-photo");
