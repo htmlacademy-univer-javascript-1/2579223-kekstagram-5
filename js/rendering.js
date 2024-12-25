@@ -1,10 +1,13 @@
 import { createPosts } from "./data.js";
+import { showFullScreenPost } from "./fullScreenMode.js";
 
 const picturesContainer = document.querySelector(".pictures");
 const pictureTemplate = document.querySelector("#picture").content;
 
 const posts = createPosts();
 const fragment = document.createDocumentFragment();
+
+picturesContainer.addEventListener("click", (evt) => showFullScreenPost(evt));
 
 posts.forEach(({ url, description, comments, likes }) => {
   const pictureElement = pictureTemplate.cloneNode(true);
@@ -18,3 +21,4 @@ posts.forEach(({ url, description, comments, likes }) => {
 });
 
 picturesContainer.appendChild(fragment);
+export { posts };
